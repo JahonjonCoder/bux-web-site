@@ -6,6 +6,7 @@ import Navbar1 from './components/Navbar/Navbar1';
 import Navbar from './components/Navbar/navbar';
 import Home from './components/Home/Home';
 import Footer from './components/Footer/footer';
+import MurojaatYuborish from './components/Pages/MurojaatYuborish';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Navbar />
       <Home />
       <Footer />
+      <MurojaatYuborish />
    </>
   );
 }

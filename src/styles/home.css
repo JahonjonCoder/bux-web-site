@@ -145,6 +145,10 @@
     color: #DB4E62;
 }
 
+.tranders{
+    margin-bottom: 64px;
+}
+
 .tranders__progress{
     background: #F7F9FE;
     border-top: 4px solid #0F62FE;
@@ -248,4 +252,103 @@
 
 .tranders .tranders__btn button i{
     font-size: 24px;
+}
+
+.tranders__cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(387px, 1fr));
+    gap: 12px;
+}
+
+.tranders__cards .cards{
+    background: #FFFFFF;
+    border: 1px solid #EFEFEF;
+    padding: 19px;
+    cursor: pointer;
+    min-height: 164px;
+}
+
+.tranders .cards__img-text{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.tranders .cards__img-text .imgs{
+    width: 48px;
+    height: 48px;
+    background-image: url(./../images/duduk.png);
+    background-repeat: no-repeat;
+    
+}
+
+.tranders__cards .cards:hover{
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.01);
+}
+/* 
+.tranders__cards .cards:hover .imgs{
+    background-image: url(./../images/duduk_hover.png);
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 48px;
+} */
+
+.tranders__cards .cards .cards__img-text{
+    margin-bottom: 16px;
+}
+
+.tranders__cards .cards .cards__img-text p{
+    font-style: normal;
+    font-weight: 550;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.0015em;
+    color: #222222;
+}
+
+.tranders__cards .cards h6{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.0025em;
+    color: #7B96A2;
+}
+
+.projects{
+    background: #F7F9FE;
+    padding: 64px 0;
+}
+
+span.swiper-pagination-bullet{
+    display: none;
+}
+
+.swipers{
+    width: 400px;
+    height: 200px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swipers .imgs{
+    /* width: 261px;
+    height: 124px; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swipers:hover{
+    box-shadow: 0px 8px 18px rgba(56, 140, 218, 0.2)
+}
+
+.swipers .imgs img{
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

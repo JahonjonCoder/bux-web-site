@@ -4,6 +4,7 @@ import '../../styles/footer.css';
 import Map from '../Map/Map';
 
 const Footer = () => {
+    const year = new Date().getFullYear();
     return (
         <footer>
             <Container>
@@ -40,11 +41,14 @@ const Footer = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col xl="4" md="4">
-                        <Map />
+                    <Col xl="4" md="4" className='maps'>
+                        {/* <Map /> */}
                     </Col>
                 </Row>
             </Container>
+            <div className="footer__end">
+                <p>&copy; Barcha huquqlar himoyalangan {year}</p>
+            </div>
         </footer>
     );
 }

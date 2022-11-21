@@ -1,11 +1,13 @@
-import React, {useState} from 'react';
+import React, { useState, useRef } from 'react';
 import { Container, Row, Col, Card } from 'reactstrap';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import '../../styles/home.css';
 import products from '../../data/products';
 import { motion } from 'framer-motion';
 
+
 import Button from '../button/button';
+import Swiper1 from '../Swipers/Swiper1';
 
 const Home = () => {
 
@@ -27,10 +29,10 @@ const Home = () => {
 
     }
 
-        if(productsData === 'questionarie'){
-            const filterProducts = products.filter(item => item.category === 'questionarie');
-            setProductsData(filterProducts);
-        }
+    if (productsData === 'questionarie') {
+        const filterProducts = products.filter(item => item.category === 'questionarie');
+        setProductsData(filterProducts);
+    }
 
     return (
         <>
@@ -112,15 +114,15 @@ const Home = () => {
                                         Muallif: <span>Hoshimjon Turob</span>
                                     </div>
                                     <div className="footer__btn">
-                                    <motion.button 
-                                            className={`${tab === 'desc'? 'active__tab1':''}`}
-                                            onClick={()=>setTab('desc')} whileTap={{scale:1.1}}>
+                                        <motion.button
+                                            className={`${tab === 'desc' ? 'active__tab1' : ''}`}
+                                            onClick={() => setTab('desc')} whileTap={{ scale: 1.1 }}>
                                             <i class="ri-thumb-up-line"></i><span>{123}</span>
                                         </motion.button>
-                                        <motion.button 
-                                            whileTap={{scale:1.1}}
-                                            className={`${tab === 'rev'? 'active__tab':''}`}
-                                            onClick={()=>setTab('rev')}
+                                        <motion.button
+                                            whileTap={{ scale: 1.1 }}
+                                            className={`${tab === 'rev' ? 'active__tab' : ''}`}
+                                            onClick={() => setTab('rev')}
                                         >
                                             <i class="ri-thumb-down-line"></i><span>{123}</span>
                                         </motion.button>
@@ -140,15 +142,15 @@ const Home = () => {
                                         Muallif: <span>Hoshimjon Turob</span>
                                     </div>
                                     <div className="footer__btn">
-                                    <motion.button 
-                                            className={`${tab === 'desc'? 'active__tab1':''}`}
-                                            onClick={()=>setTab('desc')} whileTap={{scale:1.1}}>
+                                        <motion.button
+                                            className={`${tab === 'desc' ? 'active__tab1' : ''}`}
+                                            onClick={() => setTab('desc')} whileTap={{ scale: 1.1 }}>
                                             <i class="ri-thumb-up-line"></i><span>{123}</span>
                                         </motion.button>
-                                        <motion.button 
-                                            whileTap={{scale:1.1}}
-                                            className={`${tab === 'rev'? 'active__tab':''}`}
-                                            onClick={()=>setTab('rev')}
+                                        <motion.button
+                                            whileTap={{ scale: 1.1 }}
+                                            className={`${tab === 'rev' ? 'active__tab' : ''}`}
+                                            onClick={() => setTab('rev')}
                                         >
                                             <i class="ri-thumb-down-line"></i><span>{123}</span>
                                         </motion.button>
@@ -168,15 +170,15 @@ const Home = () => {
                                         Muallif: <span>Hoshimjon Turob</span>
                                     </div>
                                     <div className="footer__btn">
-                                    <motion.button 
-                                            className={`${tab === 'desc'? 'active__tab1':''}`}
-                                            onClick={()=>setTab('desc')} whileTap={{scale:1.1}}>
+                                        <motion.button
+                                            className={`${tab === 'desc' ? 'active__tab1' : ''}`}
+                                            onClick={() => setTab('desc')} whileTap={{ scale: 1.1 }}>
                                             <i class="ri-thumb-up-line"></i><span>{123}</span>
                                         </motion.button>
-                                        <motion.button 
-                                            whileTap={{scale:1.1}}
-                                            className={`${tab === 'rev'? 'active__tab':''}`}
-                                            onClick={()=>setTab('rev')}
+                                        <motion.button
+                                            whileTap={{ scale: 1.1 }}
+                                            className={`${tab === 'rev' ? 'active__tab' : ''}`}
+                                            onClick={() => setTab('rev')}
                                         >
                                             <i class="ri-thumb-down-line"></i><span>{123}</span>
                                         </motion.button>
@@ -196,15 +198,15 @@ const Home = () => {
                                         Muallif: <span>Hoshimjon Turob</span>
                                     </div>
                                     <div className="footer__btn">
-                                    <motion.button 
-                                            className={`${tab === 'desc'? 'active__tab1':''}`}
-                                            onClick={()=>setTab('desc')} whileTap={{scale:1.1}}>
+                                        <motion.button
+                                            className={`${tab === 'desc' ? 'active__tab1' : ''}`}
+                                            onClick={() => setTab('desc')} whileTap={{ scale: 1.1 }}>
                                             <i class="ri-thumb-up-line"></i><span>{123}</span>
                                         </motion.button>
-                                        <motion.button 
-                                            whileTap={{scale:1.1}}
-                                            className={`${tab === 'rev'? 'active__tab':''}`}
-                                            onClick={()=>setTab('rev')}
+                                        <motion.button
+                                            whileTap={{ scale: 1.1 }}
+                                            className={`${tab === 'rev' ? 'active__tab' : ''}`}
+                                            onClick={() => setTab('rev')}
                                         >
                                             <i class="ri-thumb-down-line"></i><span>{123}</span>
                                         </motion.button>
@@ -212,15 +214,66 @@ const Home = () => {
                                 </div>
                             </Card>
                         </Col>
-                        
+
                     </Row>
                 </Container>
             </section>
 
             <section className="tranders">
                 <Container>
+                    <h2 className="thema mb-5">E’lonlar va tenderlar</h2>
                     <Row>
-                        <Col lg="8" md="6">Salom</Col>
+                        <Col lg="8" md="6">
+                            <div className="tranders__cards">
+                                <div className="cards">
+                                    <div className="cards__img-text">
+                                        <div className="imgs"></div>
+                                        <p>Bugun 20.11.2022 soat 15:30 da Buxoro yoshlar markazida tadbir </p>
+                                    </div>
+                                    <h6>Tadbirning asosiy mehmoni Muhammadali Eshonqulov bo‘lib, “Yoshlarni bilimga yetaklash” mavzusida suhbat olib boriladi</h6>
+                                </div>
+
+                                <div className="cards">
+                                    <div className="cards__img-text">
+                                        <div className="imgs"></div>
+                                        <p>Bugun 20.11.2022 soat 15:30 da Buxoro yoshlar markazida tadbir </p>
+                                    </div>
+                                    <h6>Tadbirning asosiy mehmoni Muhammadali Eshonqulov bo‘lib, “Yoshlarni bilimga yetaklash” mavzusida suhbat olib boriladi</h6>
+                                </div>
+
+                                <div className="cards">
+                                    <div className="cards__img-text">
+                                        <div className="imgs"></div>
+                                        <p>Bugun 20.11.2022 soat 15:30 da Buxoro yoshlar markazida tadbir </p>
+                                    </div>
+                                    <h6>Tadbirning asosiy mehmoni Muhammadali Eshonqulov bo‘lib, “Yoshlarni bilimga yetaklash” mavzusida suhbat olib boriladi</h6>
+                                </div>
+
+                                <div className="cards">
+                                    <div className="cards__img-text">
+                                        <div className="imgs"></div>
+                                        <p>Bugun 20.11.2022 soat 15:30 da Buxoro yoshlar markazida tadbir </p>
+                                    </div>
+                                    <h6>Tadbirning asosiy mehmoni Muhammadali Eshonqulov bo‘lib, “Yoshlarni bilimga yetaklash” mavzusida suhbat olib boriladi</h6>
+                                </div>
+
+                                <div className="cards">
+                                    <div className="cards__img-text">
+                                        <div className="imgs"></div>
+                                        <p>Bugun 20.11.2022 soat 15:30 da Buxoro yoshlar markazida tadbir </p>
+                                    </div>
+                                    <h6>Tadbirning asosiy mehmoni Muhammadali Eshonqulov bo‘lib, “Yoshlarni bilimga yetaklash” mavzusida suhbat olib boriladi</h6>
+                                </div>
+
+                                <div className="cards">
+                                    <div className="cards__img-text">
+                                        <div className="imgs"></div>
+                                        <p>Bugun 20.11.2022 soat 15:30 da Buxoro yoshlar markazida tadbir </p>
+                                    </div>
+                                    <h6>Tadbirning asosiy mehmoni Muhammadali Eshonqulov bo‘lib, “Yoshlarni bilimga yetaklash” mavzusida suhbat olib boriladi</h6>
+                                </div>
+                            </div>
+                        </Col>
                         <Col lg="4" md="6">
                             <div className="tranders__progress">
                                 <h4>Ishonch telefoni</h4>
@@ -258,11 +311,22 @@ const Home = () => {
                                 </div>
                             </div>
                             <div className="tranders__btn">
-                                <motion.button whileTap={{scale:1.1}}><i class="ri-mail-line"></i> <span>Elektron murojaat</span></motion.button>
+                                <motion.button whileTap={{ scale: 1.1 }}><i class="ri-mail-line"></i> <span>Elektron murojaat</span></motion.button>
                             </div>
                         </Col>
                     </Row>
                 </Container>
+            </section>
+
+            <section className='projects'>
+                <Container>
+                    <h2 className='thema'>Loyihalar</h2>
+                </Container>
+                <Container>
+                    <Swiper1 />
+                    <Swiper1 />
+                </Container>
+
             </section>
         </>
     )

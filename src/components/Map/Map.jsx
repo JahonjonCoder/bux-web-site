@@ -1,7 +1,7 @@
 import React from 'react';
-import { YMaps } from 'react-yandex-maps';
+import { YMaps, Map, Placemark } from 'react-yandex-maps';
 
-const Map = () => {
+const Maps = () => {
     return (
         <YMaps>
             <Map defaultState={{
@@ -14,4 +14,4 @@ const Map = () => {
     );
 }
 
-export default Map;
+export default Maps;
