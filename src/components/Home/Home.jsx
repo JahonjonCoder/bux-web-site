@@ -4,22 +4,58 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import '../../styles/home.css';
 import products from '../../data/products';
 import { motion } from 'framer-motion';
+import { Carousel } from '@sefailyasoz/react-carousel';
+import Pagination from '../Pagination/Pagination';
 
 
 import Button from '../button/button';
 import Swiper1 from '../Swipers/Swiper1';
 
 const Home = () => {
-
+    const CarouselData = [
+        {
+          headerText: null,
+          subText: 'Sub Text One',
+          image: 'https://picsum.photos/300/300',
+        },
+        {
+          headerText: 'Header Text Two',
+          subText: null,
+          image: 'https://picsum.photos/1200/800',
+        },
+        {
+          headerText: null,
+          subText: null,
+          image: 'https://picsum.photos/720/720',
+        },
+        {
+          headerText: 'Header Text Four',
+          subText: 'Sub Text Four',
+          image: 'https://picsum.photos/1920/1080',
+        },
+        {
+          headerText: 'Header Text Five',
+          subText: 'Sub Text Five',
+          image: 'https://picsum.photos/480/360',
+        },
+      ];
     const [tab, setTab] = useState('');
-    const [productsData, setProductsData] = useState(products);
+
+    function likeCLick(){
+        if(tab === 'desc'){
+            setTab('desc');
+            window.document.querySelector('.like__btn').classList.add('active__tab1');
+        }else{
+            window.document.querySelector('.like__btn').classList.remove('active__tab1');
+        }
+    }
 
     const styles1 = {
         border: 'none',
         backgroundColor: "#0F62FE",
         padding: '15px 35px',
         color: "#fff"
-    }
+    };
 
     const styles2 = {
         border: '1px solid #fff',
@@ -27,12 +63,30 @@ const Home = () => {
         padding: '15px 40px',
         color: "#fff",
 
-    }
+    };
 
-    if (productsData === 'questionarie') {
-        const filterProducts = products.filter(item => item.category === 'questionarie');
-        setProductsData(filterProducts);
-    }
+    const yang = [
+        {
+            id:1,
+            'text':"Buvayda tumani markazida zamonaviy avtoturargoh qurish toʼgʼrisida",
+            'paragrf':"Buvayda tumani fuqarolari va tumanga tashrif buyuruvchi mehmonlar tuman markaziga biror bir ish bilan avtotransport vositasida kelsa, transport vositasi toʼxtab turishi uchun hech qanday maxsus ajratilganjoy mavjud emas. Аmmo kiyim-kechak bozoriga, koʼkat bozoriga yoki kirish"
+        },
+        {
+            id:2,
+            'text':"Buvayda tumani markazida zamonaviy avtoturargoh qurish toʼgʼrisida",
+            'paragrf':"Buvayda tumani fuqarolari va tumanga tashrif buyuruvchi mehmonlar tuman markaziga biror bir ish bilan avtotransport vositasida kelsa, transport vositasi toʼxtab turishi uchun hech qanday maxsus ajratilganjoy mavjud emas. Аmmo kiyim-kechak bozoriga, koʼkat bozoriga yoki kirish"
+        },
+        {
+            id:3,
+            'text':"Buvayda tumani markazida zamonaviy avtoturargoh qurish toʼgʼrisida",
+            'paragrf':"Buvayda tumani fuqarolari va tumanga tashrif buyuruvchi mehmonlar tuman markaziga biror bir ish bilan avtotransport vositasida kelsa, transport vositasi toʼxtab turishi uchun hech qanday maxsus ajratilganjoy mavjud emas. Аmmo kiyim-kechak bozoriga, koʼkat bozoriga yoki kirish"
+        },
+                {
+            id:4,
+            'text':"Buvayda tumani markazida zamonaviy avtoturargoh qurish toʼgʼrisida",
+            'paragrf':"Buvayda tumani fuqarolari va tumanga tashrif buyuruvchi mehmonlar tuman markaziga biror bir ish bilan avtotransport vositasida kelsa, transport vositasi toʼxtab turishi uchun hech qanday maxsus ajratilganjoy mavjud emas. Аmmo kiyim-kechak bozoriga, koʼkat bozoriga yoki kirish"
+        }
+    ];
 
     return (
         <>
@@ -103,117 +157,39 @@ const Home = () => {
                 <Container>
                     <h2 className="thema mb-4">So'rovnomalar</h2>
                     <Row>
-                        <Col lg='6' md='6' className='mb-3'>
-                            <Card className='bg-white'>
-                                <h3>Buvayda tumani markazida zamonaviy avtoturargoh qurish toʼgʼrisida</h3>
-                                <p>Buvayda tumani fuqarolari va tumanga tashrif buyuruvchi mehmonlar
-                                    tuman markaziga biror bir ish bilan avtotransport vositasida kelsa, transport vositasi toʼxtab turishi uchun hech qanday maxsus ajratilgan
-                                    joy mavjud emas. Аmmo kiyim-kechak bozoriga, koʼkat bozoriga yoki kirish</p>
-                                <div className="card__footer d-flex align-items-center justify-content-between">
-                                    <div className="aftor">
-                                        Muallif: <span>Hoshimjon Turob</span>
-                                    </div>
-                                    <div className="footer__btn">
-                                        <motion.button
-                                            className={`${tab === 'desc' ? 'active__tab1' : ''}`}
-                                            onClick={() => setTab('desc')} whileTap={{ scale: 1.1 }}>
-                                            <i class="ri-thumb-up-line"></i><span>{123}</span>
-                                        </motion.button>
-                                        <motion.button
-                                            whileTap={{ scale: 1.1 }}
-                                            className={`${tab === 'rev' ? 'active__tab' : ''}`}
-                                            onClick={() => setTab('rev')}
-                                        >
-                                            <i class="ri-thumb-down-line"></i><span>{123}</span>
-                                        </motion.button>
-                                    </div>
-                                </div>
-                            </Card>
-                        </Col>
+                        {
+                            yang.map(index=>(
 
-                        <Col lg='6' md='6' className='mb-3'>
-                            <Card className='bg-white'>
-                                <h3>Buvayda tumani markazida zamonaviy avtoturargoh qurish toʼgʼrisida</h3>
-                                <p>Buvayda tumani fuqarolari va tumanga tashrif buyuruvchi mehmonlar
-                                    tuman markaziga biror bir ish bilan avtotransport vositasida kelsa, transport vositasi toʼxtab turishi uchun hech qanday maxsus ajratilgan
-                                    joy mavjud emas. Аmmo kiyim-kechak bozoriga, koʼkat bozoriga yoki kirish</p>
-                                <div className="card__footer d-flex align-items-center justify-content-between">
-                                    <div className="aftor">
-                                        Muallif: <span>Hoshimjon Turob</span>
+                            <Col lg='6' md='6' className='mb-3' key={index.id}>
+                                <Card className='bg-white'>
+                                    <h3>{index.text}</h3>
+                                    <p>{index.paragrf}</p>
+                                    <div className="card__footer d-flex align-items-center justify-content-between">
+                                        <div className="aftor">
+                                            Muallif: <span>Hoshimjon Turob</span>
+                                        </div>
+                                        <div className="footer__btn">
+                                            <motion.button
+                                                className="like__btn"
+                                                // className={`${tab === 'desc' ? 'active__tab1' : ''}`}
+                                                onClick={likeCLick} whileTap={{ scale: 1.1 }}>
+                                                <i class="ri-thumb-up-line"></i><span>{123}</span>
+                                            </motion.button>
+                                            <motion.button
+                                                whileTap={{ scale: 1.1 }}
+                                                // className={`${tab === 'rev' ? 'active__tab' : ''}`}
+                                                onClick={() => setTab('rev')}
+                                            >
+                                                <i class="ri-thumb-down-line"></i><span>{123}</span>
+                                            </motion.button>
+                                        </div>
                                     </div>
-                                    <div className="footer__btn">
-                                        <motion.button
-                                            className={`${tab === 'desc' ? 'active__tab1' : ''}`}
-                                            onClick={() => setTab('desc')} whileTap={{ scale: 1.1 }}>
-                                            <i class="ri-thumb-up-line"></i><span>{123}</span>
-                                        </motion.button>
-                                        <motion.button
-                                            whileTap={{ scale: 1.1 }}
-                                            className={`${tab === 'rev' ? 'active__tab' : ''}`}
-                                            onClick={() => setTab('rev')}
-                                        >
-                                            <i class="ri-thumb-down-line"></i><span>{123}</span>
-                                        </motion.button>
-                                    </div>
-                                </div>
-                            </Card>
-                        </Col>
+                                </Card>
+                            </Col>
+                            ))
+                        }
 
-                        <Col lg='6' md='6' className='mb-3'>
-                            <Card className='bg-white'>
-                                <h3>Buvayda tumani markazida zamonaviy avtoturargoh qurish toʼgʼrisida</h3>
-                                <p>Buvayda tumani fuqarolari va tumanga tashrif buyuruvchi mehmonlar
-                                    tuman markaziga biror bir ish bilan avtotransport vositasida kelsa, transport vositasi toʼxtab turishi uchun hech qanday maxsus ajratilgan
-                                    joy mavjud emas. Аmmo kiyim-kechak bozoriga, koʼkat bozoriga yoki kirish</p>
-                                <div className="card__footer d-flex align-items-center justify-content-between">
-                                    <div className="aftor">
-                                        Muallif: <span>Hoshimjon Turob</span>
-                                    </div>
-                                    <div className="footer__btn">
-                                        <motion.button
-                                            className={`${tab === 'desc' ? 'active__tab1' : ''}`}
-                                            onClick={() => setTab('desc')} whileTap={{ scale: 1.1 }}>
-                                            <i class="ri-thumb-up-line"></i><span>{123}</span>
-                                        </motion.button>
-                                        <motion.button
-                                            whileTap={{ scale: 1.1 }}
-                                            className={`${tab === 'rev' ? 'active__tab' : ''}`}
-                                            onClick={() => setTab('rev')}
-                                        >
-                                            <i class="ri-thumb-down-line"></i><span>{123}</span>
-                                        </motion.button>
-                                    </div>
-                                </div>
-                            </Card>
-                        </Col>
-
-                        <Col lg='6' md='6' className='mb-3'>
-                            <Card className='bg-white'>
-                                <h3>Buvayda tumani markazida zamonaviy avtoturargoh qurish toʼgʼrisida</h3>
-                                <p>Buvayda tumani fuqarolari va tumanga tashrif buyuruvchi mehmonlar
-                                    tuman markaziga biror bir ish bilan avtotransport vositasida kelsa, transport vositasi toʼxtab turishi uchun hech qanday maxsus ajratilgan
-                                    joy mavjud emas. Аmmo kiyim-kechak bozoriga, koʼkat bozoriga yoki kirish</p>
-                                <div className="card__footer d-flex align-items-center justify-content-between">
-                                    <div className="aftor">
-                                        Muallif: <span>Hoshimjon Turob</span>
-                                    </div>
-                                    <div className="footer__btn">
-                                        <motion.button
-                                            className={`${tab === 'desc' ? 'active__tab1' : ''}`}
-                                            onClick={() => setTab('desc')} whileTap={{ scale: 1.1 }}>
-                                            <i class="ri-thumb-up-line"></i><span>{123}</span>
-                                        </motion.button>
-                                        <motion.button
-                                            whileTap={{ scale: 1.1 }}
-                                            className={`${tab === 'rev' ? 'active__tab' : ''}`}
-                                            onClick={() => setTab('rev')}
-                                        >
-                                            <i class="ri-thumb-down-line"></i><span>{123}</span>
-                                        </motion.button>
-                                    </div>
-                                </div>
-                            </Card>
-                        </Col>
+                      
 
                     </Row>
                 </Container>
@@ -318,6 +294,16 @@ const Home = () => {
                 </Container>
             </section>
 
+            <Carousel
+              data={CarouselData}
+              autoPlay={true}
+              rightItem={<i class="ri-arrow-left-line"></i>}
+              leftItem={<i class="ri-arrow-right-line"></i>}
+              animationDuration={3000}
+              headerTextType="black"
+              subTextType="white"
+              size="normal"
+            />
             <section className='projects'>
                 <Container>
                     <h2 className='thema'>Loyihalar</h2>
@@ -327,6 +313,10 @@ const Home = () => {
                     <Swiper1 />
                 </Container>
 
+            </section>
+
+            <section>
+                <Pagination />
             </section>
         </>
     )

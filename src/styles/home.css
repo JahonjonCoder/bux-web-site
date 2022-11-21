@@ -256,7 +256,7 @@
 
 .tranders__cards{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(387px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
     gap: 12px;
 }
 
@@ -275,7 +275,7 @@
 }
 
 .tranders .cards__img-text .imgs{
-    width: 48px;
+    width: 65px;
     height: 48px;
     background-image: url(./../images/duduk.png);
     background-repeat: no-repeat;

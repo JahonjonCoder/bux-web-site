@@ -1,14 +1,15 @@
 import React from 'react';
-import { YMaps, Map, Placemark } from 'react-yandex-maps';
+import { YMaps, Map, Placemark,FullscreenControl} from 'react-yandex-maps';
 
 const Maps = () => {
     return (
         <YMaps>
             <Map defaultState={{
-                center: [55.751574, 37.573856],
-                zoom: 5
+                center: [39.773427, 64.421715],
+                zoom: 9,
             }}>
-                <Placemark geometry={[55.684758, 37.738521]} />
+                <Placemark geometry={[39.773427, 64.421715]} />
+                <FullscreenControl options={{float:"right"}} />
             </Map>
         </YMaps>
     );

@@ -42,7 +42,8 @@ const Footer = () => {
                         </div>
                     </Col>
                     <Col xl="4" md="4" className='maps'>
-                        {/* <Map /> */}
+                    
+                        <Map />
                     </Col>
                 </Row>
             </Container>
