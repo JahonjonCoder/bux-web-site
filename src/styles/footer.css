@@ -1,0 +1,60 @@
+footer{
+    background: #004DDF;
+    padding: 20px 0;
+}
+
+footer .networks__text p{
+    font-style: normal;
+    font-weight: 550;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.0015em;
+    color: #FFFFFF;
+    margin-bottom: 22px;
+}
+
+footer .networks__text .networks{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 46px;
+}
+
+footer .footer__maps{
+    margin-bottom: 20px;
+}
+
+footer .footer__maps,
+footer .footer__phone{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 16px;
+}
+
+footer .footer__maps i,
+footer .footer__phone i{
+    color: #fff;
+    font-size: 18px;
+}
+
+footer .footer__maps .footer__map-text p,
+footer .footer__phone .footer__phone-text p{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.0025em;
+    color: #EFF3FD;
+    margin-bottom: 4px;
+}
+
+footer .footer__maps .footer__map-text h3,
+footer .footer__phone .footer__phone-text h3{
+    font-style: normal;
+    font-weight: 550;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.0015em;
+    color: #FFFFFF;
+}

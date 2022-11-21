@@ -1,0 +1,111 @@
+.navbar__top{
+    border-top: 8px solid #0F62FE;
+    border-bottom: 1px solid #DFDFE0;
+    padding-bottom: 4px;
+}
+
+.barsNav{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    position: fixed;
+    background: #fff;
+    z-index: 9999;
+    transition: .5s ease;
+    overflow: hidden;
+}
+
+.card{
+    border: none;
+}
+
+.navbar__top-img{
+    width: 368px;
+    height: 75px;
+    position: relative;
+}
+
+.navbar__top-img img{
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.navbar__row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.navbar__form{
+    background: #F7F9FE;
+    padding: 0px 0px 0px 16px;
+    gap: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    /* margin: 0 20px 0 30px; */
+}
+
+.navbar__form i{
+    color: #0F62FE;
+}
+
+.navbar__form input{
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: transparent;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.0015em;
+    color: #7B96A2;
+    padding: 12px;
+}
+
+.navbar__icons{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar__top .map,
+.navbar__top .phone{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.navbar__top .map i,
+.navbar__top .phone i{
+    background: #EFF3FD;
+    color: #0F62FE;
+    padding: 12px;
+}
+
+.map__text p,
+.phone__text p{
+    margin-bottom: 0;
+}
+
+.sticky__header{
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box-shadow: 3px 3px 8px -3px #ddd;
+    background-color: #fff;
+}
+
+.show{
+    height: 100vh;
+}
