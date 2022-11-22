@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 
 const Images = (props) => {
-    const { data } = props;
+    const { data, text } = props;
 
     const [itemOffset, setItemOffset] = useState(0);
     const [currentItems, setCurrentItems] = useState([]);
@@ -27,7 +27,9 @@ const Images = (props) => {
         <div className='images'>
             {currentItems.map(image=>(
                 <div className="image">
+                  <h1>{image.id}</h1>
                     <img src={image.url} alt={image.title} />
+                    <p>{image.title}</p>
                 </div>
             ))}
         </div>
@@ -50,3 +52,4 @@ const Images = (props) => {
 }
 
 export default Images;
+

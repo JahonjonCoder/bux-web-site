@@ -1,0 +1,33 @@
+.activityNews{
+    background: #F7F9FE;
+    border-top: 4px solid #0F62FE;
+    backdrop-filter: blur(5px);
+    padding: 20px;
+}
+
+
+.activityNews ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.activityNews ul li{
+    margin-bottom: 16px;
+    
+}
+
+.activityNews ul li a{
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.0015em;
+    color: #222222;
+}
+
+.activityNews ul li a:hover,
+.activityNews ul li a.active{
+    color: #0F62FE;
+}

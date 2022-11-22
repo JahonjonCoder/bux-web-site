@@ -29,6 +29,15 @@
   color: #0F62FE
 }
 
+.thema__links{
+  font-style: normal;
+  font-weight: 550;
+  font-size: 22px;
+  line-height: 28px;
+  color: #01012F;
+  margin-bottom: 20px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

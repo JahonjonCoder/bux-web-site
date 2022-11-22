@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react';
-import { Container, Row, Col, Card } from 'reactstrap';
+import { Container, Row, Col, Card, Pagination } from 'reactstrap';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import '../../styles/home.css';
 import products from '../../data/products';
 import { motion } from 'framer-motion';
 import { Carousel } from '@sefailyasoz/react-carousel';
-import Pagination from '../Pagination/Pagination';
+import Paginations from '../Pagination/Pagination';
 
 
 import Button from '../button/button';
@@ -294,7 +294,7 @@ const Home = () => {
                 </Container>
             </section>
 
-            <Carousel
+            {/* <Carousel
               data={CarouselData}
               autoPlay={true}
               rightItem={<i class="ri-arrow-left-line"></i>}
@@ -303,7 +303,7 @@ const Home = () => {
               headerTextType="black"
               subTextType="white"
               size="normal"
-            />
+            /> */}
             <section className='projects'>
                 <Container>
                     <h2 className='thema'>Loyihalar</h2>
@@ -313,10 +313,6 @@ const Home = () => {
                     <Swiper1 />
                 </Container>
 
-            </section>
-
-            <section>
-                <Pagination />
             </section>
         </>
     )

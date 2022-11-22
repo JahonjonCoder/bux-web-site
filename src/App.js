@@ -7,6 +7,7 @@ import Navbar from './components/Navbar/navbar';
 import Home from './components/Home/Home';
 import Footer from './components/Footer/footer';
 import MurojaatYuborish from './components/Pages/MurojaatYuborish';
+import Faoliyat__yangiliklar from './components/Pages/Faoliyat__yangiliklar';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Home />
       <Footer />
       <MurojaatYuborish />
+      <Faoliyat__yangiliklar />
    </>
   );
 }
